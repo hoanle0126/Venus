@@ -1,0 +1,17 @@
+@layer components {
+  .user {
+    @apply w-full h-screen;
+
+    &__header {
+      @apply font-[600] h-[50px] p-[10px] flex items-center justify-between;
+
+      &--title {
+        @apply text-lg;
+      }
+    }
+
+    &__content {
+        @apply w-[90%] p-[10px] absolute-x-center;
+    }
+  }
+}
