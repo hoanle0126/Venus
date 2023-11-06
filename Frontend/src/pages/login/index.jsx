@@ -3,29 +3,57 @@ import { GoogleLogin } from "@react-oauth/google";
 import { Link } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
 import US from "country-flag-icons/react/3x2/US";
+import { createRef, useState } from "react";
+import { useStateContext } from "../../context/ContextProvider";
+import { axiosClient } from "../../axios";
 
 const LoginPage = () => {
+  const emailRef = createRef();
+  const passwordRef = createRef();
+  const { setUser, setToken } = useStateContext();
+  const [message, setMessage] = useState(null);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const payload = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    };
+    axiosClient
+      .post("/signin", payload)
+      .then(({ data }) => {
+        setUser(data.user);
+        setToken(data.token);
+      })
+      .catch((err) => {
+        const response = err.response;
+        if (response && response.status === 422) {
+          setMessage(response.data.message);
+        }
+      });
+  };
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={onSubmit}>
       <div className="form__title">Sign In</div>
       <div className="form__title--sub">Your social accounts</div>
       <GoogleLogin />
       <div className="form__title--sub">Or with Venus</div>
       <input
+        ref={emailRef}
         type="email"
-        name=""
-        id=""
         className="form__input"
         placeholder="Email"
       />
       <input
+        ref={passwordRef}
         type="password"
-        name=""
-        id=""
         className="form__input"
         placeholder="Password"
       />
       <span className="form__forgot">Forgot password?</span>
+      <span className="form__error">{message}</span>
       <button type="submit" className="form__submit">
         Sign In
       </button>

@@ -1,0 +1,16 @@
+@layer components {
+  .header {
+    @apply fixed top-0 flex items-center h-[50px] z-[1000] pl-[10px] w-screen border-green  border-b-[1px];
+    &__title {
+      @apply text-lg flex gap-1 text-green w-full;
+
+      img {
+        @apply w-[30px];
+      }
+
+      span {
+        @apply font-[600];
+      }
+    }
+  }
+}

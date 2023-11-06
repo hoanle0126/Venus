@@ -16,6 +16,9 @@ export default {
         white: "#FFFFFF",
         "blue-light": "#0A72EB",
         "blue-dark": "#006CEA",
+        green: "#94B445",
+        "green-dark": "#6f8733",
+        "green-light": "#b0d651",
       },
       fontSize: {
         sm: "1.4rem",

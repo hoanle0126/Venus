@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SigninRequest;
 use App\Http\Requests\SignupRequest;
+use App\Mail\UserVerification;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -19,6 +21,24 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        if ($user) {
+            try {
+                Mail::mailer('smtp')->to($user->email)->send(new UserVerification($user));
+
+                return response()->json([
+                    'status' => 200,
+                    'message' => "Registered, verify your email address to login"
+                ], 200);
+            } catch (\Exception $th) {
+                $user->delete();
+                return response()->json([
+                    'status' => 500,
+                    'message' => "Cound not send email verification, please try again",
+                    'error' => $th->getMessage()
+                ], 500);
+            }
+        }
 
         $token = $user->createToken('main')->plainTextToken;
         return response(compact('user', 'token'));

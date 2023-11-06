@@ -23,15 +23,8 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
-            'created_at' => $this->created_at->format('Y-m-d H:i:s'),
-            'password' => [
-                'required',
-                Password::min(8)
-                    ->letters(),
-            ]
+            'name' => 'required|string|max:55',
+            'email' => 'required|email|unique:users,email',
         ];
     }
 }

@@ -1,0 +1,8 @@
+@layer components {
+    .admin {
+      @apply flex w-full h-screen relative mt-[50px];
+  
+  
+    }
+  }
+  

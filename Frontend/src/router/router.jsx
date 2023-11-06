@@ -6,6 +6,7 @@ import LoginPage from "../pages/login";
 import RegisterPage from "../pages/register";
 import UserLayout from "../layouts/UserLayout";
 import ECommerce from "../pages/e-commerce";
+import Verified from "../pages/verified";
 
 const RouterComp = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ const RouterComp = createBrowserRouter([
     element: <DefaultLayout />,
     children: [
       {
-        path: "/",
+        path: "/dashboard",
         element: <Dashboard />,
       },
     ],
@@ -30,6 +31,10 @@ const RouterComp = createBrowserRouter([
         path: "/register",
         element: <RegisterPage />,
       },
+      {
+        path: "/verified",
+        element: <Verified />,
+      },
     ],
   },
   {
@@ -37,7 +42,7 @@ const RouterComp = createBrowserRouter([
     element: <UserLayout />,
     children: [
       {
-        path: "/commerce",
+        path: "/e-commerce",
         element: <ECommerce />,
       },
     ],

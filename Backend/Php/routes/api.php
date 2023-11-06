@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\VerifyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post("/signup", [AuthController::class, "signup"]);
 Route::post("/signin", [AuthController::class, "signin"]);
+Route::get("/email/verify/{id}",[VerifyController::class,"verify"])->name("verification.verify");
 
 
 Route::middleware('auth:sanctum')->group(function () {
