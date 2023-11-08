@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   mode: "jit",
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
@@ -13,17 +14,20 @@ export default {
         "gray-light": "#DCDCDC",
         "gray-dark": "#99a1b7",
         black: "#000000",
+        dark: "#333",
         white: "#FFFFFF",
-        "blue-light": "#0A72EB",
-        "blue-dark": "#006CEA",
-        green: "#94B445",
-        "green-dark": "#6f8733",
-        "green-light": "#b0d651",
+        green: "#80BB01",
+        "green-dark": "#5D8801",
+        "green-light": "#3fe044",
+        wood: "#5B2C24",
       },
       fontSize: {
         sm: "1.4rem",
         md: "2.3rem",
         lg: "3.2rem",
+      },
+      height: {
+        "header-height": "100px",
       },
     },
   },

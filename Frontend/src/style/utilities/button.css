@@ -10,7 +10,7 @@
       }
 
       &-outline {
-        @apply text-green border-[2px] border-green bg-white;
+        @apply text-green border-[2px] border-green bg-white dark:bg-black;
 
         &:hover {
             @apply bg-green-light text-white;

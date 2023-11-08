@@ -1,6 +1,6 @@
 @layer components {
   .user {
-    @apply w-full h-screen;
+    @apply w-full min-h-[calc(100vh-theme(height.header-height))] mt-[theme(height.header-height)];
 
     &__header {
       @apply font-[600] h-[50px] p-[10px] flex items-center justify-between border-b-[1px] border-green;
@@ -39,7 +39,10 @@
     }
 
     &__content {
-      @apply w-[90%] p-[10px] absolute-x-center;
+      @apply flex justify-center;
+      &--item {
+        @apply w-[1050px] p-[10px];
+      }
     }
   }
 }

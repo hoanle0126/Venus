@@ -3,7 +3,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useStateContext } from "../../context/ContextProvider";
 import { axiosClient } from "../../axios";
 import { useEffect } from "react";
-import HeaderComp from "../../components/header";
+import HeaderComp from "../../components/header/header"
 
 const DefaultLayout = () => {
   const {token,user,setUser,setToken} = useStateContext();

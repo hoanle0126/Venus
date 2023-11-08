@@ -1,15 +1,35 @@
 @layer components {
   .header {
-    @apply fixed top-0 flex items-center h-[50px] z-[1000] pl-[10px] w-screen border-green  border-b-[1px];
+    @apply font-[600] h-header-height p-[10px] flex items-center justify-between border-b-[1px] w-screen fixed z-[1000] top-0;
     &__title {
-      @apply text-lg flex gap-1 text-green w-full;
+      @apply text-lg flex items-center gap-1 cursor-pointer;
+
+      svg {
+        @apply w-[80px];
+      }
+    }
+
+    &__user {
+      @apply flex items-center gap-7;
 
       img {
-        @apply w-[30px];
+        @apply w-[40px] h-[40px] rounded-full;
       }
 
-      span {
-        @apply font-[600];
+      svg {
+        @apply text-[2.3rem];
+      }
+    }
+
+    &__guest{
+      @apply flex items-center gap-6;
+
+      &--signin {
+        @apply btn btn-primary;
+      }
+
+      &--signup {
+        @apply btn btn-primary-outline;
       }
     }
   }

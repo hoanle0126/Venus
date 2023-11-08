@@ -1,0 +1,116 @@
+@layer components {
+  .ecommerce {
+    @apply flex flex-col gap-24;
+    &__header {
+      @apply w-full  flex gap-8;
+
+      &--category {
+        @apply bg-white w-[250px] h-[500px] flex shadow-lg relative;
+
+        &__header {
+          @apply absolute top-0 bg-green flex-center text-sm font-[600] text-white w-[260px] right-0 h-[50px] z-[1000] shadow-lg rounded-tr-lg;
+
+          &::before {
+            @apply w-[20px] absolute top-[50px] left-[-10px] bg-green-dark h-[20px] content-[""] z-[-100] shadow-lg;
+            clip-path: polygon(50% 0%, 100% 0, 100% 50%);
+          }
+        }
+
+        &__content {
+          @apply mt-[50px]  w-full overflow-y-auto hideScrollBar;
+          &-item {
+            @apply w-full h-[50px] border-b-[1px] flex gap-3 items-center pl-[20px] text-sm hover:text-green duration-300 cursor-pointer;
+          }
+        }
+      }
+
+      &--highlight {
+        @apply flex-1 h-[500px] bg-white flex shadow-lg;
+      }
+    }
+    &__service {
+      @apply flex bg-white shadow-sm;
+      &--item {
+        @apply flex-1 border-x-[0.5px] h-[50px] border-y-[1px] flex items-center pl-[20px] text-sm text-dark font-[600] gap-3;
+        svg {
+          @apply text-green;
+        }
+      }
+    }
+    &__category {
+      @apply w-full h-[300px] bg-white flex shadow-lg relative;
+
+      &--header {
+        @apply h-[50px] w-full bg-gray-200 text-sm font-[600] absolute top-0;
+
+        &-title {
+          @apply title-card;
+        }
+      }
+
+      &--content {
+        @apply mt-[50px] w-full h-[250px] flex;
+
+        &-item {
+          @apply w-[210px] h-full flex flex-col items-center pt-[30px] gap-[20px];
+
+          &-image {
+            @apply rounded-full w-[150px] h-[150px] border-[3px] flex-center;
+          }
+        }
+      }
+    }
+    &__marketing {
+      @apply w-full h-[250px] flex gap-8;
+      &--item {
+        @apply flex-1 h-full bg-white shadow-md;
+      }
+    }
+    &__product {
+      @apply w-full h-[750px] shadow-lg;
+
+      &--header {
+        @apply h-[50px] w-full bg-gray-200 flex;
+        &-title {
+          @apply flex-center w-[120px] text-sm font-[600];
+        }
+      }
+      &--content {
+        @apply grid grid-cols-4 w-full h-[700px];
+        &-item {
+          @apply bg-white border h-[calc(700px/2)] flex flex-col items-center gap-3;
+          &-image {
+            @apply w-full h-[230px] bg-black;
+          }
+          &-category {
+            @apply flex-1 font-[600] text-gray-400;
+          }
+          &-name {
+            @apply flex-1 text-sm font-[600];
+          }
+          &-cost {
+            @apply flex-1 text-sm text-green font-[600];
+          }
+        }
+      }
+    }
+    &__news {
+      @apply flex relative w-full h-[350px] shadow-lg;
+      &--header {
+        @apply w-full h-[50px] bg-gray-200 absolute top-0;
+        &-title {
+          @apply title-card text-sm font-[600];
+        }
+      }
+      &--content {
+        @apply w-full h-[300px] grid grid-cols-3 mt-[50px];
+        &-item {
+          @apply flex-1 border flex flex-col;
+          &-image {
+            @apply w-full h-[200px] bg-black;
+          }
+        }
+      }
+    }
+  }
+}

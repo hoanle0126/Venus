@@ -13,7 +13,7 @@ class Permission extends Model
         return $this->belongsToMany(Role::class,'roles_permissions');
     }
 
-    public function users(){
+    public function products(){
         return $this->belongsToMany(User::class,'users_permissions');
     }
 }
