@@ -1,6 +1,6 @@
 @layer components {
   .header {
-    @apply font-[600] h-header-height p-[10px] flex items-center justify-between border-b-[1px] w-screen fixed z-[1000] top-0;
+    @apply font-[600] h-header-height p-[10px] flex items-center justify-between border-b-[1px] w-screen fixed z-[1000] top-0 bg-white opacity-80;
     &__title {
       @apply text-lg flex items-center gap-1 cursor-pointer;
 
@@ -21,7 +21,7 @@
       }
     }
 
-    &__guest{
+    &__guest {
       @apply flex items-center gap-6;
 
       &--signin {
@@ -30,6 +30,20 @@
 
       &--signup {
         @apply btn btn-primary-outline;
+      }
+    }
+    &--scroll {
+      @apply  font-[600] h-[60px] p-[10px] flex items-center justify-between border-b-[1px] w-screen fixed z-[1000] top-0 bg-white opacity-80;
+
+      svg {
+        @apply w-[40px];
+      }
+    }
+
+    &__center {
+      @apply h-full flex flex-col;
+      &--search {
+        @apply h-1/2 flex-center;
       }
     }
   }

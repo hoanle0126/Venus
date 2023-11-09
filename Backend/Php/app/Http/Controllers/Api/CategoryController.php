@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
@@ -36,7 +36,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CategoryProduct $categoryProduct)
+    public function show(Category $category)
     {
         //
     }
@@ -44,7 +44,7 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CategoryProduct $categoryProduct)
+    public function edit(Category $category)
     {
         //
     }
@@ -52,7 +52,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CategoryProduct $categoryProduct)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -60,7 +60,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CategoryProduct $categoryProduct)
+    public function destroy(Category $category)
     {
         //
     }

@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 
-const Title = () => {
+function Title() {
   return (
     <Helmet>
       <title>Venus</title>
@@ -12,6 +12,6 @@ const Title = () => {
       />
     </Helmet>
   );
-};
+}
 
 export default Title;
