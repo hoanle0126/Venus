@@ -37,6 +37,8 @@ const HeaderComp = () => {
     });
   }, []);
 
+  console.log(user)
+
   const ThemeColor = leaf;
   return (
     <>

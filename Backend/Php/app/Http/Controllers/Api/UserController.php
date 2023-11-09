@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Resources\UserResource;
+use App\Models\Role;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return User::query()->orderBy('id', 'desc')->paginate(10);
+        return UserResource::collection(User::query()->orderBy('id', 'desc')->paginate(10));
     }
 
     /**
