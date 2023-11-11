@@ -1,0 +1,28 @@
+@layer utilities {
+  .table__data {
+    @apply w-full h-full font-[600] text-dark text-default;
+
+    tr {
+      &:first-child {
+        @apply h-[50px];
+      }
+      &:not(:first-child,:last-child){
+        @apply border-y border-dashed;
+      }
+    }
+
+    td,th {
+        @apply p-[10px];
+        &:not(:first-child) {
+            @apply text-right
+        }
+        &:first-child {
+            @apply w-[40%]
+        }
+    }
+
+    th {
+        @apply text-gray-1 font-[600]
+    }
+  }
+}

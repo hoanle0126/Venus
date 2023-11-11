@@ -13,6 +13,8 @@
 @import "./utilities/absolute-center.css";
 @import "./utilities/button.css";
 @import "./utilities/hidden.css";
+@import "./utilities/tab.css";
+@import "./utilities/table.css";
 /* Components */
 @import "./components/form.css";
 @import "./components/verified.css";

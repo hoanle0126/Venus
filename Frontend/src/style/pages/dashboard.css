@@ -1,12 +1,12 @@
 @layer components {
     .dashboard {
-        @apply p-[20px];
+        @apply py-[30px] px-[60px] flex flex-col gap-[30px];
 
         &__top {
-            @apply flex flex-col;
+            @apply flex flex-col font-[600];
 
             &--header{
-                @apply text-md;
+                @apply text-md text-dark;
             }
 
             &--breadcrumbs{
@@ -15,10 +15,10 @@
         }
 
         &__overview{
-            @apply w-full grid grid-cols-12 mt-[20px] gap-[21px];
+            @apply w-full grid grid-cols-12 gap-[30px];
 
             &--left {
-                @apply col-span-6 h-[100px] grid grid-cols-12 gap-[21px] pt-[10px] p-[30px];
+                @apply col-span-6 grid grid-cols-12 gap-[30px];
 
                 &-items {
                     @apply col-span-6 card  h-[210px];

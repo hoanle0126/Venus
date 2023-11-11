@@ -9,7 +9,7 @@ const DefaultLayout = () => {
     <div className="admin">
       <AdminHeader className={"admin__header"}/>
       <main className="flex">
-        <AdminSidebar className=" w-[240px] bg-white h-[calc(100vh-60px)] z-[500] shadow-lg flex flex-col items-center p-[20px] gap-[20px]"/> 
+        {/* <AdminSidebar className=" w-[240px] bg-white h-[calc(100vh-60px)] z-[500] shadow-lg flex flex-col items-center p-[20px] gap-[20px] fixed"/>  */}
         <div className="flex-1"><Outlet/></div>
       </main>
     </div>

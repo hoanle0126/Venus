@@ -1,5 +1,21 @@
 @layer utilities {
-    .card {
-        @apply bg-white shadow-md rounded-lg;
+  .card {
+    @apply bg-white shadow-md rounded-lg;
+  }
+
+  .overview__card {
+    @apply p-[20px] pb-[10px];
+    &--header {
+      @apply text-lg font-[600] flex items-center gap-[10px];
     }
+    &--subheader {
+      @apply text-default font-[600] text-gray-400;
+    }
+    &--badge {
+      @apply w-[45px] h-[25px] bg-green/30 rounded-lg text-sm flex items-center justify-center pb-[3px] text-green;
+    }
+    &--contents {
+      @apply h-[100px] w-full flex pr-[30px];
+    }
+  }
 }

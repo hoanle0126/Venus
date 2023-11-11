@@ -1,44 +1,68 @@
-import { ChartContainer, BarPlot } from "@mui/x-charts";
-import { leaf } from "../../../context/ThemeContext";
+import { BarChart, Bar,  ResponsiveContainer } from 'recharts';
 
-const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
-const xLabels = [
-  "Page A",
-  "Page B",
-  "Page C",
-  "Page D",
-  "Page E",
-  "Page F",
-  "Page G",
+const data = [
+  {
+    name: 'Page A',
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: 'Page B',
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: 'Page C',
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: 'Page D',
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: 'Page E',
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: 'Page F',
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: 'Page G',
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
 ];
 
 const AverageSaleCard = () => {
   return (
     <div className="dashboard__overview--left-items">
-      <div className="p-[20px] pb-[10px]">
-        <div className="text-lg font-[600] flex items-center gap-[10px]">
+      <div className="overview__card">
+        <div className="overview__card--header">
           $2,420
-          <div className="w-[50px] h-[20px] bg-green rounded-lg"></div>
+          <div className="overview__card--badge">as</div>
         </div>
-        <div className="text-sm font-[600] text-gray-400">
+        <div className="overview__card--subheader">
           Average Daily Sales
         </div>
       </div>
-      <div className="h-[100px] w-full flex pr-[30px]">
-        <ChartContainer
-          width={250}
-          height={300}
-          margin={{
-            left: 35,
-            right: 0,
-            top: 0,
-            bottom: 220,
-          }}
-          series={[{ data: uData, label: "uv", type: "bar", color: leaf }]}
-          xAxis={[{ scaleType: "band", data: xLabels }]}
-        >
-          <BarPlot />
-        </ChartContainer>
+      <div className="overview__card--contents">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart width={150} height={40} data={data} margin={{left:30,bottom:20,top:10}} >
+          <Bar dataKey="uv" fill={"#17C653"} />
+        </BarChart>
+      </ResponsiveContainer>
       </div>
     </div>
   );

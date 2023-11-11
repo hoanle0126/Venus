@@ -1,0 +1,9 @@
+@layer utilities {
+    .tab {
+        @apply h-full w-[70px] bg-white border border-dashed rounded-2xl cursor-pointer duration-200;
+
+        &--active{
+            @apply  border-solid border-b-[6px] border-b-green;
+        }
+    }
+}
