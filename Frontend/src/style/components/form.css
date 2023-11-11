@@ -1,6 +1,6 @@
 @layer components {
   .form {
-    @apply flex-center flex-col w-[80%] sm:w-[60%] md:w-[50%] lg:w-[30%] h-full gap-[21px] relative;
+    @apply flex-center flex-col w-[100%] sm:w-[60%] md:w-[50%] lg:w-[30%] h-full gap-[21px] relative;
 
     &__title {
       @apply text-md font-[600] mb-[-16px];
@@ -19,7 +19,7 @@
     }
 
     &__submit {
-      @apply bg-green text-white w-[100%] h-[40px] text-sm rounded-lg font-[600];
+      @apply w-[100%] h-[40px] text-sm font-[600];
     }
 
     &__link {

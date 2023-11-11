@@ -2,16 +2,16 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../pages/dashboard";
 import DefaultLayout from "../layouts/AdminLayout";
 import AuthLayout from "../layouts/AuthLayout";
-import LoginPage from "../pages/login";
-import RegisterPage from "../pages/register";
 import UserLayout from "../layouts/UserLayout";
 import ECommerce from "../pages/e-commerce";
 import Verified from "../pages/verified";
+import RegisterPage from "../pages/auth/register";
+import LoginPage from "../pages/auth/login";
 
 const RouterComp = createBrowserRouter([
   {
     path: "/",
-    element: <DefaultLayout />,
+    element: <DefaultLayout/>,
     children: [
       {
         path: "/dashboard",
@@ -25,7 +25,7 @@ const RouterComp = createBrowserRouter([
     children: [
       {
         path: "/login",
-        element: <LoginPage />,
+        element: <LoginPage/>,
       },
       {
         path: "/register",
@@ -42,7 +42,7 @@ const RouterComp = createBrowserRouter([
     element: <UserLayout />,
     children: [
       {
-        path: "/e-commerce",
+        path: "/",
         element: <ECommerce />,
       },
     ],

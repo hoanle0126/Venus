@@ -22,6 +22,7 @@ export default {
         wood: "#5B2C24",
       },
       fontSize: {
+        default: "1.4rem",
         sm: "1.4rem",
         md: "2.3rem",
         lg: "3.2rem",

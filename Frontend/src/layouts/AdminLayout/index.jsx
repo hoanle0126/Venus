@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Outlet } from "react-router-dom";
-import HeaderComp from "../../components/header/header"
+import AdminHeader from "./AdminHeader";
 
 const DefaultLayout = () => {
   
   return (
     <div className="admin">
-      <HeaderComp/>
+      <AdminHeader/>
       <Outlet />
     </div>
   );

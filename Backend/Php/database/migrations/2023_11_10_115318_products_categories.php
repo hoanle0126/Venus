@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,11 +13,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('image', function (Blueprint $table) {
+        Schema::create("products_categories", function (Blueprint $table) {
             $table->id();
-            $table->string('url');
-            $table->string('title');
-            $table->timestamps();
+            $table->foreignIdFor(Product::class);
+            $table->foreignIdFor(Category::class);
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products_image');
+        //
     }
 };

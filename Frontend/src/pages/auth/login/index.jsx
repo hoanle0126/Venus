@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
 import US from "country-flag-icons/react/3x2/US";
 import { createRef, useState } from "react";
-import { useStateContext } from "../../context/ContextProvider";
-import { axiosClient } from "../../axios";
+import { useStateContext } from "../../../context/ContextProvider";
+import { axiosClient } from "../../../axios";
+import { StyleButton } from "../../../components/button";
+import StyleInput from "../../../components/input";
 
 const LoginPage = () => {
   const emailRef = createRef();
@@ -40,23 +42,17 @@ const LoginPage = () => {
       <div className="form__title--sub">Your social accounts</div>
       <GoogleLogin />
       <div className="form__title--sub">Or with Venus</div>
-      <input
-        ref={emailRef}
-        type="email"
-        className="form__input"
-        placeholder="Email"
-      />
-      <input
-        ref={passwordRef}
-        type="password"
-        className="form__input"
-        placeholder="Password"
-      />
+      <div className="flex flex-col gap-[21px] w-full">
+        <StyleInput  inputRef={emailRef} type={"email"} label={"Email"} />
+        <StyleInput inputRef={passwordRef} type={"password"} label={"Password"} />
+      </div>
       <span className="form__forgot">Forgot password?</span>
       <span className="form__error">{message}</span>
-      <button type="submit" className="form__submit">
-        Sign In
-      </button>
+      <div className="form__submit">
+        <StyleButton type="submit" variant="contained" fullWidth>
+          Sign In
+        </StyleButton>
+      </div>
       <span className="form__link">
         Don't have account? <Link to={"/register"}>Sign up</Link>
       </span>

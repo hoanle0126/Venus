@@ -1,5 +1,12 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Cost;
+use App\Models\Product;
+use App\Models\Rate;
+use App\Models\Review;
+use App\Models\Role;
+use App\Models\Image;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,7 +22,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('decription');
-            $table->float('cost');
             $table->timestamps();
         });
     }

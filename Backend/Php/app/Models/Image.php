@@ -9,6 +9,11 @@ class Image extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'url' ,
+        'name',
+    ];
+
     public function user(){
         return $this->belongsTo(User::class);
     }

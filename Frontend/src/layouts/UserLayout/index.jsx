@@ -5,7 +5,6 @@ import Footer from "../footer";
 
 const UserLayout = () => {
 
-
   return (
     <div className="user">
       <HeaderComp/>

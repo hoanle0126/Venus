@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useStateContext } from "../../context/ContextProvider";
 import { axiosClient } from "../../axios";
 import HeaderUser from "./HeaderUser";
@@ -8,7 +8,7 @@ import HeaderGuest from "./HeaderGuest";
 import { leaf, wood } from "../../context/ThemeContext";
 import Garden from "../../assets/garden";
 import { IconButton, InputBase, Paper } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 
 const HeaderComp = () => {
   const { token, setUser, user } = useStateContext();
@@ -29,15 +29,10 @@ const HeaderComp = () => {
   useEffect(() => {
     axiosClient.get("/user").then(({ data }) => {
       setUser(data);
-      user.role_id === 1 ? (
-        <Navigate to="/dashboard" />
-      ) : (
-        <Navigate to="/e-commerce" />
-      );
     });
   }, []);
 
-  console.log(user)
+  console.log(user);
 
   const ThemeColor = leaf;
   return (
@@ -56,22 +51,22 @@ const HeaderComp = () => {
                   display: "flex",
                   alignItems: "center",
                   width: 400,
-                  boxShadow:'none',
+                  boxShadow: "none",
                   border: `1px solid ${wood}`,
                   borderRadius: 99,
                 }}
               >
                 <InputBase
-                  sx={{ ml: 1, flex: 1,fontSize:"1.4rem" }}
+                  sx={{ ml: 1, flex: 1, fontSize: "1.4rem" }}
                   placeholder="Search"
                   inputProps={{ "aria-label": "search google maps" }}
                 />
                 <IconButton
                   type="button"
-                  sx={{ p: "10px", color: "white",backgroundColor:leaf }}
+                  sx={{ p: "10px", color: "white", backgroundColor: leaf }}
                   aria-label="search"
                 >
-                  <SearchIcon/>
+                  <SearchIcon />
                 </IconButton>
               </Paper>
             </div>

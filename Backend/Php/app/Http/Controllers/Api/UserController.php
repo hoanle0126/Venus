@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return UserResource::collection(User::query()->orderBy('id', 'desc')->where('role_id','2')->paginate(8));
+        return UserResource::collection(User::query()->orderBy('id', 'desc')->paginate(8));
     }
 
     /**
@@ -24,7 +24,19 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        // 
+        // $data = $request->validated();
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        $user->Images()->create([
+            'url' => $request->url,
+            'name' => $request->name,
+        ]);
+
+        return $request->user();
     }
 
     /**

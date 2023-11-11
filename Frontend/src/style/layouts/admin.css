@@ -1,8 +1,10 @@
 @layer components {
     .admin {
-      @apply flex w-full h-screen relative mt-[50px];
+      @apply flex flex-col w-full h-[calc(100vh-60px)] relative mt-[60px];
   
-  
+      &__header {
+        @apply h-[60px] fixed top-0 w-full bg-white flex justify-end items-center pr-[30px] shadow-lg opacity-70;
+      }
     }
   }
   

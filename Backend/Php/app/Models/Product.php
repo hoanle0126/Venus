@@ -9,16 +9,8 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
-
-    public function wishlist(){
-        return $this->belongsToMany(Wishlist::class);
-    }
-
-    public function cost(){
-        return $this->hasOne(Cost::class);
+    public function price(){
+        return $this->hasOne(Price::class);
     }
 
     public function image(){
@@ -26,14 +18,10 @@ class Product extends Model
     }
 
     public function cart(){
-        return $this->hasMany(Cart::class);
+        return $this->belongsToMany(Cart::class);
     }
 
-    public function review(){
-        return $this->hasMany(Review::class);
-    }
-
-    public function rate(){
-        return $this->hasMany(Rate::class);
+    public function categories(){
+        return $this->belongsToMany(Category::class,"products_categories");
     }
 }
