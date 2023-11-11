@@ -42,7 +42,7 @@ const RouterComp = createBrowserRouter([
     element: <UserLayout />,
     children: [
       {
-        path: "/",
+        path: "/e-commerce",
         element: <ECommerce />,
       },
     ],

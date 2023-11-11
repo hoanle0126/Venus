@@ -1,10 +1,22 @@
 @layer components {
-    .admin {
-      @apply flex flex-col w-full h-[calc(100vh-60px)] relative mt-[60px];
-  
-      &__header {
-        @apply h-[60px] fixed top-0 w-full bg-white flex justify-end items-center pr-[30px] shadow-lg opacity-70;
+  .admin {
+    @apply flex flex-col w-full h-[calc(100vh-60px)] relative mt-[60px];
+
+    &__header {
+      @apply h-[60px] fixed top-0 w-full bg-white flex justify-between items-center pl-[10px] pr-[30px] shadow-lg opacity-70 gap-[21px] z-[1000];
+
+      &--left {
+        &--title{
+          @apply flex items-end text-[2.4rem] font-[600] text-green; 
+        svg {
+          @apply w-[50px] h-[50px];
+        }
+        }
+      }
+
+      &--right {
+        @apply flex items-center h-full justify-end gap-4;
       }
     }
   }
-  
+}

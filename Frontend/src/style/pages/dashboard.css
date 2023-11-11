@@ -1,0 +1,29 @@
+@layer components {
+    .dashboard {
+        @apply p-[20px];
+
+        &__top {
+            @apply flex flex-col;
+
+            &--header{
+                @apply text-md;
+            }
+
+            &--breadcrumbs{
+                @apply flex gap-3;
+            }
+        }
+
+        &__overview{
+            @apply w-full grid grid-cols-12 mt-[20px] gap-[21px];
+
+            &--left {
+                @apply col-span-6 h-[100px] grid grid-cols-12 gap-[21px] pt-[10px] p-[30px];
+
+                &-items {
+                    @apply col-span-6 card  h-[210px];
+                }
+            }
+        }
+    }
+}

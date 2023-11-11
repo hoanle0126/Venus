@@ -19,5 +19,7 @@
 @import "./components/menu.css";
 @import "./components/header.css";
 @import "./components/title-card.css";
+@import "./components/card.css";
 /* Pages */
-@import "./pages/ecommerce.css"
+@import "./pages/ecommerce.css";
+@import "./pages/dashboard.css"
